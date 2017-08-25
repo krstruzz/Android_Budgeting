@@ -21,9 +21,7 @@ class AddExpense : AppCompatActivity() {
     fun buAdd(view: View) {
         var dbManager = DBManager(this)
         var values = ContentValues()
-        values.put(dbManager.colExpName,etExpName.text.toString())
-        values.put(dbManager.colExpCost,etExpCost)
-        values.put(dbManager.colExpDate,etExpDate)
+
 
         val ID = dbManager.Insert(values)
         if(ID>0){

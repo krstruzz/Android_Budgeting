@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_layout"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText"
+    <TextView
+        android:id="@+id/tvExpName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:padding="5pt"
+        android:text="Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editText2"
+        <TextView
+            android:id="@+id/tvExpDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
-            android:inputType="date" />
+            android:padding="5pt"
+            android:text="Date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@android:color/white"/>
 
-        <EditText
-            android:id="@+id/editText3"
+        <TextView
+            android:id="@+id/tvExpCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
-            android:inputType="numberDecimal" />
-
+            android:padding="5pt"
+            android:text="$"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,19 +48,23 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button2"
+        <ImageButton
+            android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:background="@color/blue_dark"
+            app:srcCompat="@android:drawable/ic_menu_edit"
+            tools:background="@color/blue_dark" />
 
-        <Button
-            android:id="@+id/button3"
+        <ImageButton
+            android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:background="@color/blue_dark"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
+
     </LinearLayout>
 
 </LinearLayout>

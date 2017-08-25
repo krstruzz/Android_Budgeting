@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark">
+    android:background="@android:color/holo_blue_light">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50pt"
-        android:background="@android:color/holo_blue_light"
+        android:background="@drawable/background_layout"
         android:elevation="4dp"
-        android:padding="20px">>
+        android:padding="20px">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +26,9 @@
                 android:ems="10"
                 android:inputType="text|textShortMessage"
                 android:padding="10pt"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@android:color/holo_blue_light"
+                android:typeface="monospace" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,7 +43,9 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="date"
-                    android:text="Date" />
+                    android:text="MM/DD/YYYY"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:typeface="monospace" />
 
                 <EditText
                     android:id="@+id/etExpCost"
@@ -49,17 +54,33 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="numberDecimal"
-                    android:text="Amount" />
+                    android:text="$0.00"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:typeface="monospace" />
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/button"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="10px"
-                android:text="@string/add" />
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ibDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blue_dark"
+                    app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                <ImageButton
+                    android:id="@+id/ibAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/blue_dark"
+                    app:srcCompat="@android:drawable/ic_menu_add" />
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
