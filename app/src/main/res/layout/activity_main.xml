@@ -8,8 +8,18 @@
     android:orientation="vertical"
     tools:context="com.struzzwebsolutions.budgeting.MainActivity">
 
+    <ImageButton
+        android:id="@+id/ibAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_dark"
+        android:contentDescription="@string/add"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
     <ListView
         android:id="@+id/lvExpenses"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"></ListView>
+
+
 </LinearLayout>

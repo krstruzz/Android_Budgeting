@@ -2,14 +2,15 @@ package com.struzzwebsolutions.budgeting
 
 import java.util.*
 
-/**
- * Created by keith on 8/17/17.
- */
-class Expense(var expID: Int, var expenseName: String, var expenseDate: Date, var expenseCost: Double) {
+class Expense() {
+    var expID: UUID = UUID.randomUUID()
+    var expenseName: String? = null
+    var expenseDate: Date? = null
+    var expenseCost: Double? = null
 
-    override fun toString(): String {
-        return "$expenseDate - $expenseName: $expenseCost"
-    }
+    constructor(expenseName: String, expenseDate: Date, expenseCost: Double) : this() {}
+
+    override fun toString(): String = "[$expenseDate] $expenseName: $expenseCost"
 
     fun addExpenseToDB(expense: Expense) {
 

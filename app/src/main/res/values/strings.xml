@@ -4,4 +4,7 @@
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="save">Save</string>
+    <string name="exp_name_hint">Enter the expense name.</string>
+    <string name="exp_cost_hint">Enter the expense cost.</string>
+    <string name="exp_date_hint">MM/DD/YYYY</string>
 </resources>

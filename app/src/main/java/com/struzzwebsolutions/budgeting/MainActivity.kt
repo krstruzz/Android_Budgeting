@@ -18,43 +18,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Add dummy exp
-        listExpenses.add(Expense(1,"First Expense", Date(8/15/2017),75.65))
-        listExpenses.add(Expense(2,"Second Expense", Date(8/16/2017),1005.65))
-        listExpenses.add(Expense(3,"Third Expense", Date(9/15/2017),5.65))
+        listExpenses.add(Expense("First Expense", Date(8/15/2017),75.65))
+        listExpenses.add(Expense("Second Expense", Date(8/16/2017),1005.65))
+        listExpenses.add(Expense("Third Expense", Date(9/15/2017),5.65))
 
-        var myExpensesAdapter = MyExpensesAdapter(listExpenses)
+        val myExpensesAdapter = MyExpensesAdapter(listExpenses)
         lvExpenses.adapter = myExpensesAdapter
     }
 
-    inner class MyExpensesAdapter:BaseAdapter {
+    inner class MyExpensesAdapter(var listExpensesAdapter: ArrayList<Expense>) : BaseAdapter() {
 
-        var listExpensesAdapter = ArrayList<Expense>()
-        constructor(listExpensesAdapter:ArrayList<Expense>):super() {
-            this.listExpensesAdapter = listExpensesAdapter
-
-        }
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-            var myView = layoutInflater.inflate(R.layout.activity_expense,null)
+            val myView = layoutInflater.inflate(R.layout.activity_add_expense,null)
             var myExpense = listExpensesAdapter[p0]
-            myView.tvExpName.text = myExpense.expenseName
-            myView.tvExpDate.text = myExpense.expenseDate.toString()
-            myView.tvExpCost.text = myExpense.expenseCost.toString()
+            //myView.tv_expense_name.text = myExpense.expenseName
+            //myView.tv_expense_date.text = myExpense.expenseDate.toString()
+            //myView.tv_expense_cost.text = myExpense.expenseCost.toString()
 
             return myView
 
         }
 
-        override fun getItem(p0: Int): Any {
-            return listExpensesAdapter[p0]
-        }
+        override fun getItem(p0: Int): Any = listExpensesAdapter[p0]
 
-        override fun getItemId(p0: Int): Long {
-            return p0.toLong()
-        }
+        override fun getItemId(p0: Int): Long = p0.toLong()
 
-        override fun getCount(): Int {
-            return listExpensesAdapter.size
-        }
+        override fun getCount(): Int = listExpensesAdapter.size
 
     }
 }

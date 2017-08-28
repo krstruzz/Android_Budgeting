@@ -2,6 +2,7 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light">
@@ -11,22 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50pt"
         android:background="@drawable/background_layout"
-        android:elevation="4dp"
-        android:padding="20px">
+        android:elevation="10dp"
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <EditText
-                android:id="@+id/etExpName"
+                android:id="@+id/et_expense_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="@string/exp_name_hint"
                 android:inputType="text|textShortMessage"
-                android:padding="10pt"
-                android:text="Name"
                 android:textColor="@android:color/holo_blue_light"
                 android:typeface="monospace" />
 
@@ -34,10 +35,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10pt">
+                android:padding="10dp">
 
                 <EditText
-                    android:id="@+id/etExpDate"
+                    android:id="@+id/et_expense_date"
                     android:layout_width="75pt"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -48,13 +49,13 @@
                     android:typeface="monospace" />
 
                 <EditText
-                    android:id="@+id/etExpCost"
+                    android:id="@+id/et_expense_cost"
                     android:layout_width="75pt"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:hint="@string/exp_cost_hint"
                     android:inputType="numberDecimal"
-                    android:text="$0.00"
                     android:textColor="@android:color/holo_blue_light"
                     android:typeface="monospace" />
 
@@ -63,10 +64,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
 
                 <ImageButton
-                    android:id="@+id/ibDelete"
+                    android:id="@+id/ib_delete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -74,12 +76,12 @@
                     app:srcCompat="@android:drawable/ic_menu_delete" />
 
                 <ImageButton
-                    android:id="@+id/ibAdd"
+                    android:id="@+id/ib_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/blue_dark"
-                    app:srcCompat="@android:drawable/ic_menu_add" />
+                    app:srcCompat="@android:drawable/ic_menu_edit" />
             </LinearLayout>
 
         </LinearLayout>
